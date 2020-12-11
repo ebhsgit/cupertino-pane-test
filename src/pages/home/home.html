@@ -14,13 +14,11 @@
   </div>
 
   <div class="content" hide-on-bottom overflow-y>
-    <ion-content>
-      <ion-list>
-        <ion-item *ngFor="let i of data">
-          <ion-label>{{i.name}}</ion-label>
-        </ion-item>
-      </ion-list>
-      <button ion-button block (click)="changeData()">Change data</button>
-    </ion-content>
+    <ion-list>
+      <ion-item *ngFor="let i of data">
+        <ion-label>{{i.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <button ion-button block (click)="changeData()">Change data</button>
   </div>
 </div>
