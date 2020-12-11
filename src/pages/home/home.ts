@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { CupertinoPane, CupertinoSettings } from "cupertino-pane";
 import { NavController } from "ionic-angular";
+import { DataProvider } from './../../providers/data/data';
 
 @Component({
   selector: "page-home",
@@ -8,21 +9,12 @@ import { NavController } from "ionic-angular";
 })
 export class HomePage {
   btmPane: CupertinoPane;
-  data: Item[];
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public dataProvider: DataProvider) { }
 
   ionViewDidLoad() {
-    this.initData();
+    this.dataProvider.initData();
     this.showPane();
-  }
-
-  async initData() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users/");
-    const json = await response.json();
-    console.log(json);
-
-    this.data = json;
   }
 
   showPane() {
@@ -43,10 +35,6 @@ export class HomePage {
   }
 
   changeData() {
-    this.navCtrl.push("EditPage", { item: this.data });
+    this.navCtrl.push("AnotherPage");
   }
-}
-
-export interface Item {
-  name;
 }

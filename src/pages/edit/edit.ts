@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Item } from '../home/home';
+import { IonicPage, NavController } from 'ionic-angular';
+import { DataProvider, Item } from './../../providers/data/data';
 
 /**
  * Generated class for the EditPage page.
@@ -16,18 +16,15 @@ import { Item } from '../home/home';
 })
 export class EditPage {
 
-
-  data: Item[] = [];
   item: Item = { name: "" }
 
-  constructor(public navCtrl: NavController, public navParm: NavParams) { }
+  constructor(public navCtrl: NavController, public dataProvider: DataProvider) { }
 
   ionViewDidLoad() {
-    this.data = this.navParm.get("item");
-    this.item = { name: this.data[2].name };
+    this.item = { name: this.dataProvider.data[2].name };
   }
 
   ionViewWillUnload() {
-    this.data[2] = this.item;
+    this.dataProvider[2] = this.item;
   }
 }
