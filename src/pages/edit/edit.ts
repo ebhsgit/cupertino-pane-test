@@ -25,6 +25,6 @@ export class EditPage {
   }
 
   ionViewWillUnload() {
-    this.dataProvider[2] = this.item;
+    this.dataProvider.data[2] = this.item;
   }
 }
