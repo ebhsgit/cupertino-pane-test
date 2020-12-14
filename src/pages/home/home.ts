@@ -17,12 +17,6 @@ export class HomePage {
     this.showPane();
   }
 
-  ionViewWillEnter() {
-    if (this.btmPane) {
-      this.btmPane.setOverflowHeight();
-    }
-  }
-
   showPane() {
     const settings: CupertinoSettings = {
       lowerThanBottom: true,
