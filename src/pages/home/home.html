@@ -14,11 +14,17 @@
   </div>
 
   <div class="content" hide-on-bottom overflow-y>
+    <ion-item>
+      <ion-label>Input</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
     <ion-list>
       <ion-item *ngFor="let i of dataProvider.data">
         <ion-label>{{i.name}}</ion-label>
       </ion-item>
     </ion-list>
+
     <button ion-button block (click)="changeData()">Change data</button>
   </div>
 </div>
